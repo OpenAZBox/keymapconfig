@@ -38,4 +38,4 @@ DISCLAIMER
 
 This plugin is distributed as is. It may not work on some setups and may stop working at any moment if the E2 core images managers change something this plugin relies (key names mapped on kernel, classes and function names, other plugins that conflicts with this one, etc.)
 
-This plugin is open source and you are free to use it for non commercial purposes. Code thiefs, closed images and any one that you have to "donate" to use (payment disguised) are NOT welcome to use any part of this code.
+This plugin is open source and you are free to use it for non commercial purposes. Code thieves, closed images and any one that you have to "donate" to use (payment disguised) are NOT welcome to use any part of this code.
