@@ -54,6 +54,6 @@ def Plugins(**kwargs):
 	descr = _("Config custom remote control keymaps")
 
 	return [
-		PluginDescriptor(where = PluginDescriptor.WHERE_MENU, fnc = menu),
-		PluginDescriptor(where = PluginDescriptor.WHERE_SESSIONSTART, fnc = autostart, weight = 9999999999)
+		PluginDescriptor(where = PluginDescriptor.WHERE_MENU, fnc = menu, needsRestart = True),
+		PluginDescriptor(where = PluginDescriptor.WHERE_SESSIONSTART, fnc = autostart, needsRestart = True, weight = 99999999999)
 	]
