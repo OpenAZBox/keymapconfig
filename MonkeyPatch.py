@@ -3,7 +3,7 @@ from Components.ActionMap import ActionMap
 from Screens.InfoBarGenerics import InfoBarPlugins, InfoBarEPG, InfoBarSubtitleSupport, InfoBarInstantRecord #InfoBarAudioSelection
 from Components.PluginComponent import plugins
 from Components.VolumeControl import VolumeControl
-import KeymapConfig.load_keymap
+from KeymapConfig import KeymapConfig.load_keymap
 from Components.config import config
 
 def InfoBarPlugins__init__(self):
