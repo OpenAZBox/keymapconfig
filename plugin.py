@@ -1,19 +1,12 @@
 from Plugins.Plugin import PluginDescriptor
-
 import keymapparser
-from Screens.InfoBarGenerics import InfoBarPlugins, InfoBarEPG, InfoBarSubtitleSupport #InfoBarAudioSelection
-
+from Screens.InfoBarGenerics import InfoBarPlugins, InfoBarEPG, InfoBarSubtitleSupport
 from Components.PluginComponent import plugins
 from Components.VolumeControl import VolumeControl
-
 from Components.config import config
 import KeymapConfig, MonkeyPatch
 
-# baseInfoBarPlugins__init__ = None
-
 def autostart(reason, **kwargs):
-	# global baseInfoBarPlugins__init__
-
 	if "session" in kwargs:
 		session = kwargs["session"]
 		if MonkeyPatch.baseInfoBarPlugins__init__ is None:
@@ -34,7 +27,6 @@ def autostart(reason, **kwargs):
 def main(session, **kwargs):
 	print "[KEYMAP CONFIG]"
 	try:
-		# reload(KeymapConfig)
 		session.open(KeymapConfig.KeymapConfig)
 	except:
 		import traceback

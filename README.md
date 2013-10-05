@@ -1,5 +1,7 @@
 This plugin aims to fix some remote control usability issues that probably will never be addresed by the oficial E2 core images managers, offering the ability to choose between customized keymaps and some extended events.
 
+After you install the package, is recommended to restart your E2 to make it work properly.
+
 You can choose your desired keymap under Setup > System > Keymap Config. Choose your desired keymap with OK. Activate it and save your selection using the green button. Exit or red button will cancel any changes you made.
 
 It was developed using OpenPLi 3 (by OpenRSI), and may not work properly on other or older images.

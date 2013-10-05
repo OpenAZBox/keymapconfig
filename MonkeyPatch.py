@@ -1,6 +1,6 @@
 from Plugins.Plugin import PluginDescriptor
 from Components.ActionMap import ActionMap
-from Screens.InfoBarGenerics import InfoBarPlugins, InfoBarEPG, InfoBarSubtitleSupport, InfoBarInstantRecord #InfoBarAudioSelection
+from Screens.InfoBarGenerics import InfoBarPlugins, InfoBarEPG, InfoBarSubtitleSupport, InfoBarInstantRecord
 from Components.PluginComponent import plugins
 from Components.VolumeControl import VolumeControl
 import KeymapConfig
