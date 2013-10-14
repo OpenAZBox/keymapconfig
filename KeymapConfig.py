@@ -25,21 +25,29 @@ def load_keymap(keymap, keymaplist = []):
 
 			try:
 				keymapparser.removeKeymap(k)
-			except:
-				pass
+			except Exception, e:
+				print "[Keymap Config] RemoveKeymap error:", e
 
 		try:
-			print "[KEYMAP CONFIG] Loading '%s'" % keymap
+			print "[Keymap Config] Loading '%s'" % keymap
 			keymapparser.readKeymap(keymap)
 			return True
 
-		except:
-			print "[KEYMAP CONFIG] Could not load keymap file '%s'" % keymap
-			print "[KEYMAP CONFIG] This plugin will not work properly..."
+		except Exception, e:
+			print "[Keymap Config] Could not load keymap file '%s'" % keymap
+			print "[Keymap Config] This plugin will not work properly"
+			print "[Keymap Config] Reason:", e
+
+			try:
+				print "[Keymap Config] Reloading default keymap"
+				keymapparser.readKeymap("/usr/share/enigma2/keymap.xml")
+				return True
+
+			except Exception, e:
+				print "[Keymap Config] Something bad happened. Failed to reload default keymap."
+				print "[Keymap Config] Reason:", e
 
 	return False
-
-
 
 class KeymapConfig(Screen):
 	skin = """

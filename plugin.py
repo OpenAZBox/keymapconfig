@@ -12,7 +12,7 @@ def autostart(reason, **kwargs):
 		if MonkeyPatch.baseInfoBarPlugins__init__ is None:
 			MonkeyPatch.baseInfoBarPlugins__init__ = InfoBarPlugins.__init__
 
-		print "[KEYMAP CONFIG] Monkeypatching InfoBarPlugins"
+		print "[Keymap Config] Monkeypatching InfoBarPlugins"
 		InfoBarPlugins.__init__ = MonkeyPatch.InfoBarPlugins__init__
 		InfoBarPlugins.showGraphEPG = MonkeyPatch.showGraphEPG
 		InfoBarPlugins.showYouTube = MonkeyPatch.showYouTube
@@ -25,13 +25,11 @@ def autostart(reason, **kwargs):
 		InfoBarPlugins.instantRecordIndefinitely = MonkeyPatch.instantRecordIndefinitely
 
 def main(session, **kwargs):
-	print "[KEYMAP CONFIG]"
+	print "[Keymap Config]"
 	try:
 		session.open(KeymapConfig.KeymapConfig)
-	except:
-		import traceback
-		traceback.print_exc()
-
+	except Exception, e:
+		print "[Keymap Config] Error:", e
 
 def menu(session, **kwargs):
 	if session == "system":
@@ -39,7 +37,6 @@ def menu(session, **kwargs):
 			(_("Keymap Config"), main, "keymap_config", None)
 		]
 	return [ ]
-
 
 def Plugins(**kwargs):
 	name = _("Keymap Config")
