@@ -73,8 +73,16 @@ def subtitleSelectionAlt(self):
 	except:
 		pass
 
+def openAutoLanguageSetup(self):
+	from Screens.Setup import Setup
+	if self.settings.menupage.getValue() == "subtitles": # PAGE_SUBTITLES
+		self.session.open(Setup, "subtitlesetup")
+	else:
+		self.session.open(Setup, "autolanguagesetup")
+
 def instantRecordIndefinitely(self):
-	if self.isInstantRecordRunning():
+	ts = self.getTimeshift()
+	if self.isInstantRecordRunning() or not ts is None and ts.isTimeshiftActive():
 		self.instantRecord()
 	else:
 		self.startInstantRecording()
