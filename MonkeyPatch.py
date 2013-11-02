@@ -1,6 +1,6 @@
 from Plugins.Plugin import PluginDescriptor
 from Components.ActionMap import ActionMap
-from Screens.InfoBarGenerics import InfoBarPlugins, InfoBarEPG, InfoBarSubtitleSupport, InfoBarInstantRecord
+from Screens.InfoBarGenerics import InfoBarPlugins, InfoBarEPG, InfoBarSubtitleSupport, InfoBarInstantRecord, isStandardInfoBar
 from Components.PluginComponent import plugins
 from Components.VolumeControl import VolumeControl
 import KeymapConfig
@@ -81,11 +81,12 @@ def openAutoLanguageSetup(self):
 		self.session.open(Setup, "autolanguagesetup")
 
 def instantRecordIndefinitely(self):
-	ts = self.getTimeshift()
-	if self.isInstantRecordRunning() or not ts is None and ts.isTimeshiftActive():
-		self.instantRecord()
-	else:
-		self.startInstantRecording()
+	if isStandardInfoBar(self):
+		ts = self.getTimeshift()
+		if self.isInstantRecordRunning() or self.isTimerRecordRunning() or not ts is None and ts.isTimeshiftActive():
+			self.instantRecord()
+		else:
+			self.startInstantRecording()
 
 def volumeUp(self):
 	self.vol.volUp()
