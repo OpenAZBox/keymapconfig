@@ -119,3 +119,22 @@ def showSoftcam(self):
 		self.session.open(PluginBrowser)
 
 baseInfoBarPlugins__init__ = None
+
+def autostart(reason, *args, **kwargs):
+	global baseInfoBarPlugins__init__
+	if "session" in kwargs:
+		if baseInfoBarPlugins__init__ is None:
+			baseInfoBarPlugins__init__ = InfoBarPlugins.__init__
+
+		print "[Keymap Config] Monkeypatching InfoBarPlugins"
+		InfoBarPlugins.__init__ = InfoBarPlugins__init__
+		InfoBarPlugins.showGraphEPG = showGraphEPG
+		InfoBarPlugins.showYouTube = showYouTube
+		InfoBarPlugins.showSoftcam = showSoftcam
+		InfoBarPlugins.showMediaCenter = showMediaCenter
+		InfoBarPlugins.volumeUp = volumeUp
+		InfoBarPlugins.volumeDown = volumeDown
+		InfoBarPlugins.switchRadioTV = switchRadioTV
+		InfoBarPlugins.subtitleSelectionAlt = subtitleSelectionAlt
+		InfoBarPlugins.instantRecordIndefinitely = instantRecordIndefinitely
+		AudioSelection.openAutoLanguageSetup = openAutoLanguageSetup
