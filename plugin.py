@@ -1,11 +1,7 @@
 from Plugins.Plugin import PluginDescriptor
-from Screens.InfoBarGenerics import InfoBarPlugins
-from Screens.AudioSelection import AudioSelection
 from Components.PluginComponent import plugins
-from Components.VolumeControl import VolumeControl
 from Components.config import config
 import KeymapConfig, MonkeyPatch
-import keymapparser
 
 def main(session, *args, **kwargs):
 	print "[Keymap Config]"

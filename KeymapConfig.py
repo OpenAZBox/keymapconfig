@@ -3,11 +3,10 @@ from Components.ActionMap import ActionMap
 from Components.Sources.List import List
 from Components.Sources.StaticText import StaticText
 from Tools.LoadPixmap import LoadPixmap
-from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_CURRENT_SKIN
+from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN
+from Components.config import config, ConfigSubsection, ConfigText
 import keymapparser
 import os
-
-from Components.config import config, ConfigSubsection, ConfigText
 
 config.plugins.keymap = ConfigSubsection()
 config.plugins.keymap.selected = ConfigText()

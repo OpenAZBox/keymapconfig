@@ -3,6 +3,7 @@ from Components.ActionMap import ActionMap
 from Screens.InfoBarGenerics import InfoBarPlugins, InfoBarEPG, InfoBarSubtitleSupport, InfoBarInstantRecord, isStandardInfoBar
 from Components.PluginComponent import plugins
 from Components.VolumeControl import VolumeControl
+from Screens.AudioSelection import AudioSelection, SubtitleSelection
 import KeymapConfig
 from Components.config import config
 
@@ -68,7 +69,6 @@ def showMediaCenter(self):
 
 def subtitleSelectionAlt(self):
 	try:
-		from Screens.AudioSelection import SubtitleSelection
 		self.session.open(SubtitleSelection, self)
 	except:
 		pass
