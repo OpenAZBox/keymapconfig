@@ -4,12 +4,10 @@ from Screens.InfoBarGenerics import InfoBarPlugins, InfoBarEPG, InfoBarSubtitleS
 from Components.PluginComponent import plugins
 from Components.VolumeControl import VolumeControl
 from Screens.AudioSelection import AudioSelection, SubtitleSelection
-import KeymapConfig
+from KeymapConfig import load_keymap
 from Components.config import config
 
 def InfoBarPlugins__init__(self):
-	KeymapConfig.load_keymap(config.plugins.keymap.selected.value)
-
 	if isinstance(self, InfoBarEPG):
 		self.vol = VolumeControl(self.session)
 		
@@ -122,6 +120,9 @@ baseInfoBarPlugins__init__ = None
 
 def autostart(reason, *args, **kwargs):
 	global baseInfoBarPlugins__init__
+
+	load_keymap(config.plugins.keymap.selected.value)
+
 	if "session" in kwargs:
 		if baseInfoBarPlugins__init__ is None:
 			baseInfoBarPlugins__init__ = InfoBarPlugins.__init__
