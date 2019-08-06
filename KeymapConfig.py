@@ -111,11 +111,11 @@ class KeymapConfig(Screen):
 	def set_selected(self):
 		for k, item in enumerate(self.list):
 			item = list(item)
-			item[3] = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_SKIN, "skin_default/icons/lock_off.png"))
+			item[3] = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_SKIN, "icons/lock_off.png"))
 			self["config"].modifyEntry(k, tuple(item))
 
 		item = list(self.list[self.selected])
-		item[3] = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_SKIN, "skin_default/icons/lock_on.png"))
+		item[3] = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_SKIN, "icons/lock_on.png"))
 		self["config"].modifyEntry(self.selected, tuple(item))
 		self["config"].setIndex(self.selected)
 
@@ -135,7 +135,7 @@ class KeymapConfig(Screen):
 			"/usr/share/enigma2/keymap.xml",
 			_("Default"),
 			"/usr/share/enigma2/keymap.xml",
-			LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_SKIN, "skin_default/icons/lock_off.png")),
+			LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_SKIN, "icons/lock_off.png")),
 		))
 
 		for path_item in self.keymap_paths:
@@ -157,7 +157,7 @@ class KeymapConfig(Screen):
 							keymap_path,
 							title,
 							keymap_path.replace('/usr/lib/enigma2/python/Plugins/', './'), # description
-							LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_SKIN, "skin_default/icons/lock_off.png")),
+							LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_SKIN, "icons/lock_off.png")),
 						))
 				break
 
